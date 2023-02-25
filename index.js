@@ -1,4 +1,5 @@
 const express=require('express')
+const port=process.env.PORT||8000
 var cors = require('cors')
 const { urlencoded } = require('express')
 const app=express()
@@ -37,11 +38,10 @@ app.post('/',(req,res)=>{
      c=6
     }
     let result= twojug([a,b],[c,0])
-    console.log('m')
     res.send(result)
 })
-app.listen(8000,()=>{
-    console.log('s')
+app.listen(port,()=>{
+    console.log('start')
 })
 
 let twojug=(sizeInput,goalInput)=>{
